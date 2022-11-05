@@ -1,7 +1,9 @@
 torch==1.12.1
 tensorflow==2.9.2
 Pillow
-opencv-python==4.5.5.62
+opencv_contrib_python
+opencv-python-headless
+opencv-python
 streamlit-webrtc
 scipy
 protobuf
