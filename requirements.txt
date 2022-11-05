@@ -11,3 +11,4 @@ IPython
 psutil
 torchvision
 PyYAML
+tqdm
