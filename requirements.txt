@@ -12,3 +12,4 @@ psutil
 torchvision
 PyYAML
 tqdm
+matplotlib
