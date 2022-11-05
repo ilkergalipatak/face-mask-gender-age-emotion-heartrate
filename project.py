@@ -16,7 +16,7 @@ from typing import List, NamedTuple, Optional
 
 detector=torch.hub.load('ultralytics/yolov5','custom', path='models/face.pt')
 mask_model=torch.hub.load('ultralytics/yolov5','custom', path='models/mask.pt')
-gender_model=models.load_model('models/models/classification_gender_model_utk.h5')
+gender_model=models.load_model('models/classification_gender_model_utk.h5')
 age_model=models.load_model('models/classification_age_model_utk.h5')
 emotion_model=models.load_model('models/classification_emotion_model_utk.h5')
 freq_min = 1
