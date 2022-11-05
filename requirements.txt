@@ -8,3 +8,4 @@ streamlit-webrtc
 scipy
 protobuf
 IPython
+psutil
