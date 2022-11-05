@@ -1,0 +1,5 @@
+torch
+tensorflow
+Pillow
+opencv-python
+streamlit-webrtc
