@@ -10,3 +10,4 @@ protobuf
 IPython
 psutil
 torchvision
+PyYAML
