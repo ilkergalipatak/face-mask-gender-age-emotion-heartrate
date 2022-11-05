@@ -1,7 +1,7 @@
 torch
 tensorflow
 Pillow
-opencv-python
+opencv-python==4.5.5.62
 streamlit-webrtc
 scipy
 protobuf
