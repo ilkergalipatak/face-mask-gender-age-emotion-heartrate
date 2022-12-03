@@ -125,7 +125,7 @@ def app_object_detection():
             cv2.rectangle(frame,(left,top),(right,bottom),(255,0,0),2)
             gender_text='Female' if gender_preds>0.5 else 'Male'
             cv2.putText(frame,'Gender: {}({:.3f})'.format(gender_text,gender_preds),(left,top-10),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,93,255),1,cv2.LINE_AA)
-            cv2.putText(frame,'Age: {:.2f}'.format(age_preds),(left,top-25),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,93,2552),1,cv2.LINE_AA)
+            cv2.putText(frame,'Age: {:.3f}'.format(age_preds),(left,top-25),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,93,2552),1,cv2.LINE_AA)
             cv2.putText(frame,'Emotion: {}({:.3f})'.format(emotion_dict[np.argmax(emotion_preds)],np.max(emotion_preds)),(left,top-40),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,93,255),1,cv2.LINE_AA)
             classes=2
             if len(mask_coords[0])>0:
