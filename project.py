@@ -40,7 +40,7 @@ def main():
 def app_loopback():
     webrtc_streamer(key='loopback')
 
-@st.cache
+
 def load_models():
     detector=torch.hub.load('ultralytics/yolov5','custom', path='models/face.pt')
     mask_model=torch.hub.load('ultralytics/yolov5','custom', path='models/mask.pt')
