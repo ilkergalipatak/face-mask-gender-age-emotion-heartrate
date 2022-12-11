@@ -14,3 +14,4 @@ PyYAML
 tqdm
 matplotlib
 seaborn
+asyncio
