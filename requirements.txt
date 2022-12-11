@@ -4,7 +4,7 @@ Pillow
 opencv_contrib_python
 opencv-python-headless
 opencv-python
-streamlit-webrtc
+streamlit-webrtc==0.44.0
 scipy
 protobuf
 IPython
