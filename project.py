@@ -14,11 +14,7 @@ import streamlit as st
 from streamlit_webrtc import RTCConfiguration, WebRtcMode, WebRtcStreamerContext, webrtc_streamer
 from typing import List, NamedTuple, Optional
 
-detector=torch.hub.load('ultralytics/yolov5','custom', path='models/face.pt')
-mask_model=torch.hub.load('ultralytics/yolov5','custom', path='models/mask.pt')
-gender_model=models.load_model('models/classification_gender_model_utk.h5')
-age_model=models.load_model('models/classification_age_model_utk.h5')
-emotion_model=models.load_model('models/classification_emotion_model_utk.h5')
+
 freq_min = 1
 freq_max = 1.8
 logger=logging.getLogger(__name__)
@@ -43,8 +39,14 @@ def main():
 
 def app_loopback():
     webrtc_streamer(key='loopback')
-
+    
+@st.cache
 def detect_face(img):
+    detector=torch.hub.load('ultralytics/yolov5','custom', path='models/face.pt')
+    mask_model=torch.hub.load('ultralytics/yolov5','custom', path='models/mask.pt')
+    gender_model=models.load_model('models/classification_gender_model_utk.h5')
+    age_model=models.load_model('models/classification_age_model_utk.h5')
+    emotion_model=models.load_model('models/classification_emotion_model_utk.h5')
     mt_res=detector(img)
     return_res=[]
     if len(mt_res.xyxy[0])>0:
