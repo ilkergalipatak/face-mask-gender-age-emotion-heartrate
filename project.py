@@ -39,14 +39,19 @@ def main():
 
 def app_loopback():
     webrtc_streamer(key='loopback')
-    
+
 @st.cache
-def detect_face(img):
+def load_models():
     detector=torch.hub.load('ultralytics/yolov5','custom', path='models/face.pt')
     mask_model=torch.hub.load('ultralytics/yolov5','custom', path='models/mask.pt')
     gender_model=models.load_model('models/classification_gender_model_utk.h5')
     age_model=models.load_model('models/classification_age_model_utk.h5')
     emotion_model=models.load_model('models/classification_emotion_model_utk.h5')
+    return detector, mask_model, gender_model, age_model, emotion_model
+    
+
+def detect_face(img):
+    detector, mask_model, gender_model, age_model, emotion_model=load_models()
     mt_res=detector(img)
     return_res=[]
     if len(mt_res.xyxy[0])>0:
